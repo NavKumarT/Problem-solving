@@ -23,7 +23,8 @@ public:
             ans += minEdge.first;
             visited[minEdge.second] = true;            
             for(auto neighbour : adj[minEdge.second]){
-                pq.push(neighbour);
+                if(visited[neighbour.second] == false)
+                    pq.push(neighbour);
             }
         }
         return ans;
