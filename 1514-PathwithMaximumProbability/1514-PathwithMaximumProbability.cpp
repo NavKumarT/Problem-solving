@@ -2,6 +2,8 @@ class Solution {
 public:
     double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start_node, int end_node) {
         // lets use dijkstra's algorithm to find the maximum probability path 
+        // we will be using max heap instead of the usual min heap 
+        // while relaxing the edges make sure to maximize and not minimize 
         vector<double> dist(n, INT_MIN);
         vector<vector<pair<double, int>>> adj(n);
 
@@ -10,7 +12,6 @@ public:
             adj[edges[i][1]].push_back(make_pair(succProb[i], edges[i][0]));
         }   
 
-        // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>> pq;
         priority_queue<pair<double, int>> pq;
 
         pq.push(make_pair(1, start_node));
