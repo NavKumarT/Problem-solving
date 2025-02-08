@@ -6,18 +6,15 @@ public:
     KthLargest(int kk, vector<int>& nums) {
         k = kk;
         for (int num : nums) {
-        minHeap.push(num);
-        
-        // Ensure the heap does not exceed size k
-        if (minHeap.size() > k) {
-            minHeap.pop();  // Remove the smallest element to maintain heap size k
+            minHeap.push(num);
+            if (minHeap.size() > k) {
+                minHeap.pop();  // Remove the smallest element to maintain heap size k
         }
     }
     }
     
     int add(int num) {
          minHeap.push(num);
-        
         // Ensure the heap does not exceed size k
         if (minHeap.size() > k) {
             minHeap.pop();  // Remove the smallest element to maintain heap size k
