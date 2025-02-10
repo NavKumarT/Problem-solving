@@ -12,7 +12,6 @@ public:
         while(i < k){
             pair<int, int> p = pq.top();
             pq.pop();
-            // i += p.first;
             if(k-i >= p.first){
                  i += p.first;
                  mp.erase(p.second);
