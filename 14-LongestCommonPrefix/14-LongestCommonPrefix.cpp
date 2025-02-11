@@ -4,7 +4,6 @@ public:
         if(strs.size() == 1)
             return strs[0];
         string sub = func(strs[0], strs[1]);
-        cout << sub << endl;
         for(int i = 1; i < strs.size(); i++){
             sub = func(sub, strs[i]);
         }
