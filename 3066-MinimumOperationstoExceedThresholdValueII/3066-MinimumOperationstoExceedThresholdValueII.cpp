@@ -12,7 +12,6 @@ public:
             long long b = pq.top();
             pq.pop();
             pq.push(min(a, b) * 2 + max(a, b));
-            cout << min(a, b) * 2 + max(a, b) << " ";
             count++;
         }
         return count;
