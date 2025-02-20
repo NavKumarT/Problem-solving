@@ -1,5 +1,11 @@
 class Solution {
 public:
+    // solution uses hashing in addition to backtracking, 
+    // generate all possible binary stirngs and check if the 
+    // hashtable has those. Once you find a binary string that
+    //  is not present in the hashtable, 
+    // return directly in the subsequent recusrsive calls 
+   
     string findDifferentBinaryString(vector<string>& nums) {
         unordered_set<string> ss;
         for(string s : nums)
