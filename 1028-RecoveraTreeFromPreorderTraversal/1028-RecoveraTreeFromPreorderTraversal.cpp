@@ -25,7 +25,7 @@ public:
             } 
             else {
                 if(i == traversal.length()-1)
-                number = number * 10 + int(traversal[i]-48);
+                    number = number * 10 + int(traversal[i]-48);
 
                 while(st.empty() == false && st.top().second != dashes-1)
                     st.pop();
@@ -45,22 +45,6 @@ public:
                 number = 0;
             }
         }
-        // if(number != 0){
-        //       while(st.empty() == false && st.top().second != dashes-1)
-        //             st.pop();
-        //      TreeNode *node = new TreeNode(number);
-        //         if(root == NULL){
-        //             root = node;
-        //         }
-        //         else {
-        //             TreeNode* parent  = st.top().first;
-        //             if(parent->left == NULL)
-        //             parent->left = node;
-        //         else 
-        //             parent->right = node;
-        //         }
-
-        // }
         return root;
     }
 
