@@ -26,24 +26,17 @@ public:
             else {
                 while(st.empty() == false && st.top().second != dashes-1)
                     st.pop();
-                cout << "NUmber : " << number << "dashes: " << dashes<< endl;
-                // cout << st.top().first->val  << " " << dashes << " "  << traversal[i] << endl;
                 TreeNode *node = new TreeNode(number);
                 if(root == NULL){
                     root = node;
-                    cout << "root created: " << node->val << endl;
                 }
                 else {
-                    cout << "inside else " << st.size() << endl;
-                    // cout << st.top() << " second" << endl;
                     TreeNode* parent  = st.top().first;
                     if(parent->left == NULL)
                     parent->left = node;
                 else 
                     parent->right = node;
-                    cout << node->val << " made either left or right of " << parent->val << endl;
                 }
-                cout << "pushed " << node->val << endl;
                 st.push(make_pair(node, dashes));
                 dashes = 1;
                 number = 0;
@@ -55,17 +48,13 @@ public:
              TreeNode *node = new TreeNode(number);
                 if(root == NULL){
                     root = node;
-                    cout << "root created: " << node->val << endl;
                 }
                 else {
-                    cout << "inside else " << st.size() << endl;
-                    // cout << st.top() << " second" << endl;
                     TreeNode* parent  = st.top().first;
                     if(parent->left == NULL)
                     parent->left = node;
                 else 
                     parent->right = node;
-                    cout << node->val << " made either left or right of " << parent->val << endl;
                 }
 
         }
