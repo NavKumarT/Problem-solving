@@ -39,7 +39,7 @@ public:
             return node;
         node->left = utilsFunc(preorder, postorder, mp, n, leftindex, s, start, mp[leftVal]);
         int rightval = -1, rightindex = -1;
-        for(int i = index+1;i < n; i++){
+        for(int i = leftindex+1;i < n; i++){
             if(s.find(preorder[i]) == s.end() && mp[preorder[i]] < mp[val]){
                 rightval = preorder[i];
                 rightindex = i;
