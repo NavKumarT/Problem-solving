@@ -26,7 +26,6 @@ public:
         s.insert(val);
         TreeNode* node = new TreeNode(val);
 
-        cout << "create node for " << val << endl;
         if(start >= end)
             return node;
         
@@ -42,7 +41,6 @@ public:
         if(leftVal == -1 || leftindex == -1)
             return node;
         
-        cout << "calling left of " << val << " : " << start << " " << mp[leftVal]-1 << " - " << "left val " << leftVal << endl;
         node->left = utilsFunc(preorder, postorder, mp, n, leftindex, s, start, mp[leftVal]);
 
 int rightval = -1;
@@ -56,14 +54,9 @@ int rightval = -1;
         }
         if(rightval == -1 || rightindex ==-1)
             return node;
-        cout << "calling right of " << val << " : " << start << " " << mp[leftVal]-1 << " - " << "right val " << rightval << endl;
 
         node->right = utilsFunc(preorder, postorder, mp, n, rightindex, s, mp[leftVal]+1, mp[rightval]);
 
         return node;
-
-
-
-
     }
 };
