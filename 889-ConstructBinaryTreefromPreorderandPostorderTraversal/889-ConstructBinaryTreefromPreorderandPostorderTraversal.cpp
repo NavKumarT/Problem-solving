@@ -25,12 +25,9 @@ public:
         int val = preorder[index];
         s.insert(val);
         TreeNode* node = new TreeNode(val);
-
         if(start >= end)
             return node;
-        
-        int leftVal = -1;
-        int leftindex = -1;
+        int leftVal = -1, leftindex = -1;
         for(int i = index+1;i < n; i++){
             if(s.find(preorder[i]) == s.end() && mp[preorder[i]] < mp[val]){
                 leftVal = preorder[i];
@@ -40,11 +37,8 @@ public:
         }
         if(leftVal == -1 || leftindex == -1)
             return node;
-        
         node->left = utilsFunc(preorder, postorder, mp, n, leftindex, s, start, mp[leftVal]);
-
-int rightval = -1;
-        int rightindex = -1;
+        int rightval = -1, rightindex = -1;
         for(int i = index+1;i < n; i++){
             if(s.find(preorder[i]) == s.end() && mp[preorder[i]] < mp[val]){
                 rightval = preorder[i];
@@ -54,9 +48,7 @@ int rightval = -1;
         }
         if(rightval == -1 || rightindex ==-1)
             return node;
-
         node->right = utilsFunc(preorder, postorder, mp, n, rightindex, s, mp[leftVal]+1, mp[rightval]);
-
         return node;
     }
 };
