@@ -1,3 +1,4 @@
+// Last updated: 3/2/2025, 11:13:22 AM
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
@@ -23,7 +24,6 @@ public:
                 count2--;
             }
         } 
-        cout << candidate1 << " " << candidate2 << endl;
         vector<int> ans;
         count1 = 0;
         count2 = 0;
