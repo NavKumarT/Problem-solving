@@ -1,10 +1,9 @@
+// Last updated: 3/6/2025, 11:23:26 PM
 class Solution {
 public:
     int minDistance(string word1, string word2) {
         int m = word1.length();
         int n = word2.length();
-        // if(m == 0 || n == 0)
-        //     return m == 0 ? n : m;
         vector<vector<int>> memo(m+1, vector<int>(n+1, 0));
         for(int i = 0; i <= m; i++){
             memo[i][0] = i;
