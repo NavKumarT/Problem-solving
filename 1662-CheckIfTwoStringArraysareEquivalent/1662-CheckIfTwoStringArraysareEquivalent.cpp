@@ -1,4 +1,4 @@
-// Last updated: 3/10/2025, 10:31:06 PM
+// Last updated: 3/10/2025, 10:31:23 PM
 class Solution {
 public:
     bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
@@ -7,7 +7,6 @@ public:
         while(c1 < word1.size() && c2 < word2.size()){
             string a = word1[c1];
             string b = word2[c2];
-
             if(a[i] != b[j])
                 return false;
             i++;
