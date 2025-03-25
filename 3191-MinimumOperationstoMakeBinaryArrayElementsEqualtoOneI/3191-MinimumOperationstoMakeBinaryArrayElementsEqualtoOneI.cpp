@@ -1,4 +1,4 @@
-// Last updated: 3/25/2025, 10:59:24 PM
+// Last updated: 3/25/2025, 11:00:14 PM
 class Solution {
 public:
     int minOperations(vector<int>& nums) {
