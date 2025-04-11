@@ -1,4 +1,4 @@
-// Last updated: 11/04/2025, 15:14:55
+// Last updated: 11/04/2025, 15:15:27
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -18,6 +18,7 @@ public:
         if(root->left == nullptr && root->right == nullptr)
             return root->val == 0 ? false : true;
         bool left = evaluateTree(root->left);
+        if(left == false && root->val == 3) return false;
         bool right = evaluateTree(root->right);
         if(root->val == 2) return left || right;
         else return left && right;
