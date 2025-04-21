@@ -1,4 +1,4 @@
-// Last updated: 21/04/2025, 16:25:59
+// Last updated: 21/04/2025, 19:09:20
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -13,37 +13,34 @@
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        queue<pair<TreeNode*, long long>> q;
+        queue<pair<TreeNode*, unsigned long long>> q;
+        unsigned long long ans = 0;
         q.push(make_pair(root, 1));
-        unsigned long long  ans = 0;
-        unsigned long long  count = 0;
-        unsigned long long  prevWidth = 0;
+        if(root == nullptr)
+            return 0;
         while(q.empty() == false){
             int n = q.size();
-            unsigned long long power = prevWidth + 1;
-            unsigned long long front = 0;
+            unsigned long long left = -1, right = -1;
             for(int i = 0 ; i < n; i++){
-                pair<TreeNode*, long long int> n = q.front();
+                pair<TreeNode*, unsigned long long> p = q.front();
                 q.pop();
-                unsigned long long val = n.second;
-                prevWidth = val;
-                TreeNode* node = n.first;         
-                if(front == 0)
-                    front = val;
-                if(front == 0)
-                    ans = max(ans, val - power +1 );
-                else 
-                    ans = max(ans, val - front +1 );
-                if(node != NULL){
-                    if(node->left != NULL){
-                        q.push(make_pair(node->left, 2 * val));
-                    }
-                    if(node->right != NULL){
-                        q.push(make_pair(node->right, 2 * val + 1));
-                    }
-                }
-            }   
-            count++; 
+                unsigned long long k = p.second; // the int value associated with each node: k , 2k+1, 2k+2
+                TreeNode* node = p.first; // the node we popped 
+                if(i == 0)
+                    left = k;
+                if(i == n-1)
+                    right = k;
+                if(node->left != nullptr)
+                    q.push(make_pair(node->left, 2 * k +1));
+                if(node->right != nullptr)
+                    q.push(make_pair(node->right, 2 * k +2));
+            }
+            if(right == -1 || left == -1){
+                ans = max(ans, (unsigned long long)1);
+            }
+            else {
+                ans = max(ans, right-left+1);
+            }
         }
         return ans;
     }
