@@ -1,4 +1,4 @@
-// Last updated: 21/04/2025, 15:57:13
+// Last updated: 21/04/2025, 16:05:11
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -13,9 +13,7 @@
 class Solution {
 public:
     int findBottomLeftValue(TreeNode* root) {
-        int maxLevel = INT_MIN;
-        int level = 0;
-        int ans = 0;
+        int maxLevel = INT_MIN, level = 0, ans = 0;
         traversal(root, level, maxLevel, ans);
         return ans;
     }
