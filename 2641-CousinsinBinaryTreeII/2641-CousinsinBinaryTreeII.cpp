@@ -1,4 +1,4 @@
-// Last updated: 22/04/2025, 12:25:35
+// Last updated: 22/04/2025, 12:25:53
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -34,7 +34,6 @@ public:
             }
             levelSum.push_back(sum);
         }
-        cout << "here " << endl;
         level = 0;
         queue<pair<TreeNode*, int>> qq;
         qq.push(make_pair(root, root->val));
@@ -46,7 +45,6 @@ public:
                 TreeNode* node = pp.first;
                 int siblingSum = pp.second;
                 node->val = levelSum[level] - siblingSum;
-                cout << levelSum[level] - siblingSum << endl;
                 int sum = 0;
                 if(node->left) sum += node->left->val;
                 if(node->right) sum += node->right->val;
