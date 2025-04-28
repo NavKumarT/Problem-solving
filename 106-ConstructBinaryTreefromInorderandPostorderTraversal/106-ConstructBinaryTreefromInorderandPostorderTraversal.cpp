@@ -1,4 +1,4 @@
-// Last updated: 28/04/2025, 18:50:15
+// Last updated: 28/04/2025, 18:50:30
 class Solution {
 public:
     TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
@@ -6,7 +6,7 @@ public:
                 return buildRecursive( inorder,  postorder,  0,  inorder.size()-1, i);
     }
 
-    TreeNode* buildRecursive(vector<int> inorder, vector<int> postorder, int left, int right, int &i){
+    TreeNode* buildRecursive(vector<int> &inorder, vector<int> &postorder, int left, int right, int &i){
         if(left > right)
             return NULL;
         TreeNode* node = new TreeNode(postorder[i]);
