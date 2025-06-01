@@ -1,0 +1,10 @@
+// Last updated: 01/06/2025, 19:45:35
+class Solution {
+public:
+    int rangeBitwiseAnd(int left, int right) {
+        while(left < right){
+            right = right & (right-1);
+        }
+        return right;
+    }
+};
